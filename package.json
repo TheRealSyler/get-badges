@@ -1,0 +1,32 @@
+{
+  "name": "get-badges",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./dist/cli.js",
+  "scripts": {
+    "prepack": "tsc -b && tdg --include 'types' && node ./dist/cli.js"
+  },
+  "author": "Syler",
+  "license": "MIT",
+  "bin": {
+    "get-badges": "./dist/cli.js"
+  },
+  "files": [
+    "dist/**.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheRealSyler/get-badges"
+  },
+  "dependencies": {
+    "@sorg/log": "^1.0.2",
+    "node-fetch": "^2.6.0",
+    "ts-doc-gen": "^0.2.0",
+    "typescript": "^3.6.3"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.7",
+    "@types/node-fetch": "^2.5.4",
+    "tslib": "^1.10.0"
+  }
+}
