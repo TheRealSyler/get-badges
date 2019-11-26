@@ -141,7 +141,7 @@ class Start {
         break;
     }
     if (BADGES[type] || (customBadge && LINKS[link]) || customLink) {
-      return ` [![${type}](${customBadge ? '' : baseLink}${
+      return ` [![${customBadge ? 'Custom' : type}](${customBadge ? '' : baseLink}${
         customBadge ? customBadge : this.replacePlaceholders(config, BADGES[type])
       }${params ? params : ''})](${customLink ? customLink : this.replacePlaceholders(config, LINKS[link])})`;
     } else {
@@ -193,8 +193,9 @@ class Start {
     return new Promise<Config>(async res => {
       for (const key in this.config) {
         if (this.config.hasOwnProperty(key)) {
-          const option = this.config[key];
+          const option = this.config[key as keyof Config];
           if (option && option.length !== 0) {
+            // @ts-ignore
             config[key] = option;
           }
         }
