@@ -102,9 +102,9 @@ export interface Badges {
    */
   githubLastCommit: '/github/last-commit/<GITHUB>/<REPO>';
   /**
-   * Custom Shields.io Badge.
+   * Custom, usage example: badge=https://img.shields.io/badge/custom%2C-Badge-brightgreen.
    */
-  badge: '/badge/';
+  badge: '<CUSTOM>';
 }
 export interface Links {
   /**
@@ -132,7 +132,7 @@ export interface Links {
    */
   package: 'https://packagephobia.now.sh/result?p=<NAME>';
   /**
-   * Custom, usage example: custom=example.com.
+   * Custom, usage example: link=https://example.com.
    */
-  custom: '<CUSTOM>';
+  link: '<CUSTOM>';
 }

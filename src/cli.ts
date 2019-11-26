@@ -30,7 +30,7 @@ const BADGES: Badges = {
   githubStars: '/github/stars/<GITHUB>/<REPO>',
   githubIssues: '/github/issues/<GITHUB>/<REPO>',
   githubLastCommit: '/github/last-commit/<GITHUB>/<REPO>',
-  badge: '/badge/'
+  badge: '<CUSTOM>'
 };
 
 const LINKS: Links = {
@@ -40,7 +40,7 @@ const LINKS: Links = {
   vscode: 'https://marketplace.visualstudio.com/items?itemName=<VSCODE>',
   bundle: 'https://bundlephobia.com/result?p=<NAME>',
   package: 'https://packagephobia.now.sh/result?p=<NAME>',
-  custom: '<CUSTOM>'
+  link: '<CUSTOM>'
 };
 
 class Start {
@@ -120,28 +120,30 @@ class Start {
 
   private Badge(_badge: string, config: Config): string {
     let customLink = '';
-    if (/ custom=.+/.test(_badge)) {
-      customLink = _badge.replace(/.*?custom=([^ ]*) ?.*/, '$1');
+    if (/ link=.+/.test(_badge)) {
+      customLink = _badge.replace(/.*?link=([^ ]*) ?.*/, '$1');
     }
-
+    let customBadge = '';
+    if (/badge=.+/.test(_badge)) {
+      customBadge = _badge.replace(/badge=([^ ]*) ?.*/, '$1');
+    }
     const split = _badge.split(' ');
     const type = split[0] as keyof Badges;
     const link = split[1] as keyof Links;
     const params = split[2];
-    let useBadgen = false;
+    let baseLink = ' https://img.shields.io';
     switch (type) {
       case 'install':
       case 'npmDep':
       case 'npmNode':
       case 'npmLicense':
-        useBadgen = true;
+        baseLink = 'https://badgen.net';
         break;
     }
-    if ((BADGES[type] && LINKS[link]) || customLink) {
-      return ` [![${type}](${useBadgen ? 'https://badgen.net' : 'https://img.shields.io'}${this.replacePlaceholders(
-        config,
-        BADGES[type]
-      )}${params ? params : ''})](${customLink ? customLink : this.replacePlaceholders(config, LINKS[link])})`;
+    if (BADGES[type] || (customBadge && LINKS[link]) || customLink) {
+      return ` [![${type}](${customBadge ? '' : baseLink}${
+        customBadge ? customBadge : this.replacePlaceholders(config, BADGES[type])
+      }${params ? params : ''})](${customLink ? customLink : this.replacePlaceholders(config, LINKS[link])})`;
     } else {
       logger.Log('info', `Badge: "${split.join(' ')}" is Not Valid.`);
     }

@@ -1,7 +1,7 @@
 ## get-badges
 
 <span id="BADGE_GENERATION_MARKER_0"></span>
- [![npmV](https://img.shields.io/npm/v/get-badges)](https://www.npmjs.com/package/get-badges) [![min](https://img.shields.io/bundlephobia/min/get-badges)](https://bundlephobia.com/result?p=get-badges) [![install](https://badgen.net/packagephobia/install/get-badges)](https://packagephobia.now.sh/result?p=get-badges) [![githubLastCommit](https://img.shields.io/github/last-commit/TheRealSyler/get-badges)](https://github.com/TheRealSyler/get-badges) [![badge](https://img.shields.io/badge/test-badge-blue)](https://example.com)
+ [![npmV]( https://img.shields.io/npm/v/get-badges)](https://www.npmjs.com/package/get-badges) [![min]( https://img.shields.io/bundlephobia/min/get-badges)](https://bundlephobia.com/result?p=get-badges) [![install](https://badgen.net/packagephobia/install/get-badges)](https://packagephobia.now.sh/result?p=get-badges) [![githubLastCommit]( https://img.shields.io/github/last-commit/TheRealSyler/get-badges)](https://github.com/TheRealSyler/get-badges) [![badge=https://img.shields.io/badge/custom-Badge-brightgreen](https://img.shields.io/badge/custom-Badge-brightgreen)](https://example.com)
 <span id="BADGE_GENERATION_MARKER_1"></span>
 
 ### Usage Example
@@ -150,9 +150,9 @@ interface Badges {
      */
     githubLastCommit: '/github/last-commit/<GITHUB>/<REPO>';
     /**
-     * Custom Shields.io Badge.
+     * Custom, usage example: badge=https://img.shields.io/badge/custom%2C-Badge-brightgreen.
      */
-    badge: '/badge/';
+    badge: '<CUSTOM>';
 }
 ```
 
@@ -185,9 +185,9 @@ interface Links {
      */
     package: 'https://packagephobia.now.sh/result?p=<NAME>';
     /**
-     * Custom, usage example: custom=example.com.
+     * Custom, usage example: link=https://example.com.
      */
-    custom: '<CUSTOM>';
+    link: '<CUSTOM>';
 }
 ```
 

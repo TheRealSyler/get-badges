@@ -9,6 +9,6 @@
     "min bundle",
     "install package",
     "githubLastCommit github",
-    "badge custom=https://example.com test-badge-blue"
+    "badge=https://img.shields.io/badge/custom-Badge-brightgreen link=https://example.com"
   ]
 }
