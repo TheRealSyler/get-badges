@@ -5,7 +5,6 @@ export interface Config {
   repo: string;
   out: string;
   badges: string[];
-  [key: string]: string | string[] | undefined;
 }
 
 export interface Badges {
