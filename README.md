@@ -1,7 +1,9 @@
 ## get-badges
 
+> INFO: This package is deprecated please use [suf-cli](https://www.npmjs.com/package/ts-doc-gen) instead.
+
 <span id="BADGE_GENERATION_MARKER_0"></span>
- [![npmV]( https://img.shields.io/npm/v/get-badges)](https://www.npmjs.com/package/get-badges) [![min]( https://img.shields.io/bundlephobia/min/get-badges)](https://bundlephobia.com/result?p=get-badges) [![install](https://badgen.net/packagephobia/install/get-badges)](https://packagephobia.now.sh/result?p=get-badges) [![githubLastCommit]( https://img.shields.io/github/last-commit/TheRealSyler/get-badges)](https://github.com/TheRealSyler/get-badges) [![badge=https://img.shields.io/badge/custom-Badge-brightgreen](https://img.shields.io/badge/custom-Badge-brightgreen)](https://example.com)
+ [![npmV]( https://img.shields.io/npm/v/get-badges)](https://www.npmjs.com/package/get-badges) [![min]( https://img.shields.io/bundlephobia/min/get-badges)](https://bundlephobia.com/result?p=get-badges) [![install](https://badgen.net/packagephobia/install/get-badges)](https://packagephobia.now.sh/result?p=get-badges) [![githubLastCommit]( https://img.shields.io/github/last-commit/TheRealSyler/get-badges)](https://github.com/TheRealSyler/get-badges) [![Custom](https://img.shields.io/badge/custom-Badge-brightgreen)](https://example.com)
 <span id="BADGE_GENERATION_MARKER_1"></span>
 
 ### Usage Example
@@ -49,7 +51,6 @@ interface Config {
     repo: string;
     out: string;
     badges: string[];
-    [key: string]: string | string[] | undefined;
 }
 ```
 
